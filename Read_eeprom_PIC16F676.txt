@@ -1,0 +1,18 @@
+;*******************************;*******************************
+; Read from PIC16F676 eeprom. 
+; Arguments: eeprom_address - address to eeprom, 
+; W - data from eeprom.
+;-------------------------------
+read_eeprom:
+;-------------------------------
+	bsf 	STATUS,RP0 	; Bank 1
+;-------------------------------
+	movf 	eeprom_address 	;
+	movwf 	EEADR 		; Address to read
+;-------------------------------
+	bsf 	EECON1,RD 	; EE Read
+	movf 	EEDATA,W 	; Move data to W
+;-------------------------------
+	bcf 	STATUS,RP0 	; Bank 0
+;-------------------------------
+	return
