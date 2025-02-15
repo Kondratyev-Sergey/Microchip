@@ -1,5 +1,5 @@
 ;*******************************;*******************************
-; Read from eeprom-arguments: eeprom_address - address to eeprom, 
+; Read from PIC16F876 eeprom. Arguments: eeprom_address - address to eeprom, 
 ; W - data from eeprom.
 ;-------------------------------
 read_eeprom:
